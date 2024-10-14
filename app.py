@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -7,7 +7,12 @@ app = Flask(__name__)
 @app.route('/')
 def handle():
   print('Request received')
-  return "bla"
+  data = { 
+    "Modules" : 15, 
+    "Subject" : "Data Structures and Algorithms", 
+  } 
+  
+  return jsonify(data)
 
 # @app.route('/hello', methods=['POST'])
 # def hello():
