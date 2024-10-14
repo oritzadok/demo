@@ -3,7 +3,6 @@ import pyodbc
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def handle():
   print('Request received')
