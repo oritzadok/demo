@@ -69,6 +69,12 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D12ABBDE01364886B0DAA36878840C82 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_82348485C0DD4AEC87FBDA4C8F2167A8 }}
 
+      - uses: azure/sql-action@v2.2.1
+        with:        
+          connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
+          path: './sql/Restaurant.sql'
+          action: 'publish'
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
