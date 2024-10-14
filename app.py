@@ -7,12 +7,6 @@ app = Flask(__name__)
 @app.route('/')
 def handle():
   print('Request received')
-  # data = { 
-  #   "Modules" : 15, 
-  #   "Subject" : "Data Structures and Algorithms",
-  # } 
-  
-  # return jsonify(data)
 
   connection_string = os.environ["SQLCONNSTR_connectionString1"]
   conn = pyodbc.connect(connection_string)
