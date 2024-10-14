@@ -1,0 +1,13 @@
+name: Update database
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-db:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update Restaurant table
+        run: echo "Here is a test"
