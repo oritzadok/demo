@@ -8,7 +8,7 @@ app = Flask(__name__)
 def handle():
   print('Request received')
 
-  connection_string = os.environ["SQLCONNSTR_connectionString1"]
+  connection_string = "Driver={ODBC Driver 18 for SQL Server};Server=tcp:ori123.database.windows.net,1433;Database=ori-db;Uid=azureuser;Pwd=icecream123!;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   conn = pyodbc.connect(connection_string)
   cursor = conn.cursor()
   cursor.execute("SELECT TOP 20 * FROM SalesLT.ProductCategory")
