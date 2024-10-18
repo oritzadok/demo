@@ -12,6 +12,8 @@ def handle():
   conn = pyodbc.connect(connection_string)
   cursor = conn.cursor()
   cursor.execute("SELECT TOP 20 * FROM SalesLT.ProductCategory")
+  cursor.close()
+  conn.close()
 
   data = { 
     "Modules" : 15, 
